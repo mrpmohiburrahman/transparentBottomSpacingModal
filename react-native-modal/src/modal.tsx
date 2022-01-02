@@ -17,6 +17,7 @@ import {
   View,
   ViewStyle,
   ViewProps,
+  Text,
 } from 'react-native';
 import * as PropTypes from 'prop-types';
 import * as animatable from 'react-native-animatable';
@@ -715,7 +716,7 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
     const backdropComputedStyle = [
       {
         width: this.getDeviceWidth(),
-        height: this.getDeviceHeight(),
+        height: this.getDeviceHeight()-this.props.bottomSpacing, // TODO: change here
         backgroundColor:
           this.state.showContent && !hasCustomBackdrop
             ? backdropColor
